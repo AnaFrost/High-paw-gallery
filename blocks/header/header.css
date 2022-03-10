@@ -1,0 +1,11 @@
+@import url(./header__logo.css);
+@import url(./header__line.css);
+
+.header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 880px;
+	box-sizing: border-box;
+	padding: 46px 0 22px;
+}
