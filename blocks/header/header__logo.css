@@ -1,12 +1,10 @@
 .header__logo {
 	width: 142px;
-	padding-bottom: 58px;
 }
 
 @media (max-width: 926px) {
 	.header__logo {
 		width: 104px;
-		padding-bottom: 32px;
 		padding-left: 28px;
 	}
 }
