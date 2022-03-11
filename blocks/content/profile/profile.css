@@ -1,0 +1,15 @@
+@import url(./profile__info.css);
+@import url(./profile__add-btn.css);
+
+.profile {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 34px;
+}
+
+@media (max-width: 926px) {
+	.profile {
+		flex-direction: column;
+	}
+}

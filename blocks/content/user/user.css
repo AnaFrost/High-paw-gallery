@@ -1,0 +1,17 @@
+@import url(./user__container.css);
+@import url(./user__name.css);
+@import url(./user__bio.css);
+@import url(./user__edit-btn.css);
+
+.user {
+	position: relative;
+	display: flex;
+	align-items: baseline;
+	padding: 10px 0 0 30px;
+}
+
+@media (max-width: 926px) {
+	.user {
+		padding: 26px 0 36px;
+	}
+}
