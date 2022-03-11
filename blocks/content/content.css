@@ -1,0 +1,7 @@
+@import url(./profile/profile.css);
+@import url(./user/user.css);
+
+.content {
+	width: 100%;
+	max-width: 880px;
+}

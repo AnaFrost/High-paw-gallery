@@ -1,0 +1,19 @@
+.pluse-icon {
+	position: absolute;
+}
+
+.pluse-icon::before,
+.pluse-icon::after {
+	content: "";
+	position: absolute;
+	left: -10px;
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: #fff;
+	transition: transform 0.5s ease-in-out;
+}
+
+.pluse-icon::after {
+	transform: rotate(90deg);
+}

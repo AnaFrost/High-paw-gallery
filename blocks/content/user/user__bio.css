@@ -1,0 +1,12 @@
+.user__bio {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+@media (max-width: 926px) {
+	.user__bio {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
