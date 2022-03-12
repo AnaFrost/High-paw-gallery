@@ -1,6 +1,6 @@
 .card__like-btn {
 	position: absolute;
-	top: 42px;
+	bottom: 12px;
 	right: 14px;
 	cursor: pointer;
 	padding: 0;
