@@ -1,0 +1,9 @@
+@import url(./card__image.css);
+@import url(./card__discription.css);
+
+.grid__card {
+	background-color: #fff;
+	width: 282px;
+	height: 362px;
+	border-radius: 10px;
+}

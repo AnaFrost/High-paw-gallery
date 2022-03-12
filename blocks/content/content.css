@@ -1,7 +1,10 @@
 @import url(./profile/profile.css);
 @import url(./user/user.css);
+@import url(./grid__container/grid__container.css);
 
 .content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
-	max-width: 880px;
 }

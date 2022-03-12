@@ -1,0 +1,10 @@
+@import url(./card__title.css);
+@import url(./card__like-btn.css);
+
+.card__discription {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	padding: 24px auto 30px;
+}
