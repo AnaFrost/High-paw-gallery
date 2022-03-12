@@ -1,0 +1,13 @@
+@import url(./grid__card.css);
+
+.grid__container {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 918px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 282px);
+	column-gap: 18px;
+	row-gap: 20px;
+	padding: 0 18px;
+	justify-content: center;
+}
