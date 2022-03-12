@@ -13,3 +13,15 @@
 	font-family: "Inter";
 	font-weight: 900;
 }
+
+@font-face {
+	src: url(../fonts/OleoScript-Regular.ttf) format("truetype");
+	font-family: "OleoScript";
+	font-weight: 400;
+}
+
+@font-face {
+	src: url(../fonts/OleoScript-Bold.ttf) format("truetype");
+	font-family: "OleoScript";
+	font-weight: 900;
+}
