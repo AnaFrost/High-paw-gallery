@@ -2,10 +2,12 @@
 @import url(./profile__add-btn.css);
 
 .profile {
+	width: 100%;
+	max-width: 880px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 34px;
+	padding: 34px 0 40px;
 }
 
 @media (max-width: 926px) {
