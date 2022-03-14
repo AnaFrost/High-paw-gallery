@@ -3,9 +3,7 @@
 @import url(./popup__save-btn.css);
 
 .popup__container {
-	position: fixed;
-	top: 33%;
-	left: 33%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;

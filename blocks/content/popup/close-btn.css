@@ -8,8 +8,11 @@
 	background-color: transparent;
 	width: 32px;
 	height: 32px;
-	transform: rotate(45deg);
 	transition: 0.3s opacity ease-in;
+}
+
+.close-btn .pluse-icon {
+	transform: rotate(45deg);
 }
 
 .close-btn:hover {

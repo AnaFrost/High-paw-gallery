@@ -2,8 +2,9 @@
 @import url(./popup__container.css);
 
 .popup {
-	display: block;
-	content: "";
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: rgba(0, 0, 0, 0.5);
 	position: fixed;
 	left: 0;
