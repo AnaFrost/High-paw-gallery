@@ -1,0 +1,15 @@
+@import url(./popup__title.css);
+@import url(./input.css);
+@import url(./popup__save-btn.css);
+
+.popup__container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #fff;
+	width: 430px;
+	height: 330px;
+	border-radius: 10px;
+}

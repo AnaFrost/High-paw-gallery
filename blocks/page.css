@@ -6,3 +6,7 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+.page_with_popup {
+	overflow-y: hidden;
+}

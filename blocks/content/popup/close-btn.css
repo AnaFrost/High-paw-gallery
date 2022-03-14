@@ -1,0 +1,21 @@
+.close-btn {
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	width: 32px;
+	height: 32px;
+	transition: 0.3s opacity ease-in;
+}
+
+.close-btn .pluse-icon {
+	transform: rotate(45deg);
+}
+
+.close-btn:hover {
+	opacity: 0.6;
+	transition: 0.3s opacity ease-in;
+}
