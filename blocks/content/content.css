@@ -3,7 +3,7 @@
 @import url(./grid__container/grid__container.css);
 @import url(./marker/card-marker.css);
 @import url(./popup/popup.css);
-@import url(./popup/popup_hidden.css);
+@import url(./popup/popup_opened.css);
 
 .content {
 	display: flex;
