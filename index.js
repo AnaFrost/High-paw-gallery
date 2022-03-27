@@ -64,25 +64,29 @@ const generateCard = ({ description, link, type }) => {
 
 	cardContainer.prepend(currentCard);
 
+	const cardLikeButton = currentCard.querySelector(".card__like-btn");
+	const cardLikeImage = cardLikeButton.querySelector("img");
+
+	const cardDeleteButton = currentCard.querySelector(".card__delete-btn");
+
+	const likeCard = () => {
+		cardLikeButton.classList.toggle("card__like-btn_active");
+		if (cardLikeButton.classList.contains("card__like-btn_active")) {
+			cardLikeImage.src = LIKE_BUTTON_ACTIVE;
+		} else {
+			cardLikeImage.src = LIKE_BUTTON;
+		}
+	};
+
+	cardLikeButton.addEventListener("click", likeCard);
+
 	const deleteCard = () => {
-		currentCard.removeEventListener("click", deleteCard);
+		cardDeleteButton.removeEventListener("click", deleteCard);
+		cardLikeButton.removeEventListener("click", likeCard);
 		currentCard.remove();
 	};
 
-	currentCard
-		.querySelector(".card__delete-btn")
-		.addEventListener("click", deleteCard);
-
-	const cardLike = currentCard.querySelector(".card__like-btn");
-
-	cardLike.addEventListener("click", (e) => {
-		cardLike.classList.toggle("card__like-btn_active");
-		if (cardLike.classList.contains("card__like-btn_active")) {
-			e.target.src = LIKE_BUTTON_ACTIVE;
-		} else {
-			e.target.src = LIKE_BUTTON;
-		}
-	});
+	cardDeleteButton.addEventListener("click", deleteCard);
 };
 
 initialCards.forEach((cardEl) => generateCard(cardEl));
