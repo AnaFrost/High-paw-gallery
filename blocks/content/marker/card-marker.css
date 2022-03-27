@@ -1,4 +1,6 @@
 @import url(./marker__image.css);
+@import url(./card__delete-btn.css);
+@import url(./card-marker__menu.css);
 
 .card-marker {
 	position: absolute;
@@ -10,4 +12,21 @@
 	height: 38px;
 	border-radius: 50%;
 	background-color: #fff;
+	border: 1px solid #f4f4f4b6;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-marker:hover > .card-marker__menu {
+	height: 60px;
+}
+
+.card-marker:hover > .card-marker__menu > .card__delete-btn {
+	visibility: visible;
+	opacity: 1;
+	transition: 0.3s all ease-in;
+	transition-delay: 0.4s;
 }

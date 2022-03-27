@@ -46,80 +46,7 @@
 						<i class="pluse-icon"></i>
 					</button>
 				</section>
-				<section class="grid__container">
-					<div class="grid__card">
-						<div class="card-marker">
-							<img src="image/cat_moon.svg" class="marker__image" />
-						</div>
-						<img src="image/goliaf.jpg" class="card__image" />
-						<div class="card__discription">
-							<h3 class="card__title">I`m sweety chocolate maffin</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-					<div class="grid__card">
-						<img src="image/lakky2.jpg" class="card__image" />
-						<div class="card-marker">
-							<img src="image/cat_moon.svg" class="marker__image" />
-						</div>
-						<div class="card__discription">
-							<h3 class="card__title">i`m Luckyy and i`m cute</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-					<div class="grid__card">
-						<img src="image/prudence1.jpg" class="card__image" />
-						<div class="card-marker">
-							<img src="image/dog.svg" class="marker__image" />
-						</div>
-						<div class="card__discription">
-							<h3 class="card__title">Hey, find me :з</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-					<div class="grid__card">
-						<img src="image/myaka2.jpg" class="card__image" />
-						<div class="card-marker">
-							<img src="image/cat_moon.svg" class="marker__image" />
-						</div>
-						<div class="card__discription">
-							<h3 class="card__title">Meowlax</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-					<div class="grid__card">
-						<img src="image/prudence2.jpg" class="card__image" />
-						<div class="card-marker">
-							<img src="image/dog.svg" class="marker__image" />
-						</div>
-						<div class="card__discription">
-							<h3 class="card__title">Puppy U・ᴥ・U</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-					<div class="grid__card">
-						<img src="image/lakky1.jpg" class="card__image" />
-						<div class="card-marker">
-							<img src="image/cat_moon.svg" class="marker__image" />
-						</div>
-						<div class="card__discription">
-							<h3 class="card__title">Hanter ฅ(^◕ᴥ◕^)ฅ</h3>
-							<button class="card__like-btn">
-								<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
-							</button>
-						</div>
-					</div>
-				</section>
+				<section class="grid__container"></section>
 				<div class="popup">
 					<form class="popup__container">
 						<button class="close-btn">
@@ -141,6 +68,25 @@
 				<p class="footer__copyright">&#169; 2022 High paw</p>
 			</footer>
 		</div>
+		<template id="grid__card">
+			<div class="grid__card">
+				<img class="card__image" alt="card image" />
+				<div class="card-marker">
+					<img class="marker__image" alt="card marker" />
+					<div class="card-marker__menu">
+						<button class="card__delete-btn">
+							<img src="image/trash_bin.svg" alt="delete card" />
+						</button>
+					</div>
+				</div>
+				<div class="card__discription">
+					<h3 class="card__title"></h3>
+					<button class="card__like-btn">
+						<img src="image/paw_in_heart.svg" alt="Paw Like Button" />
+					</button>
+				</div>
+			</div>
+		</template>
 		<script src="index.js"></script>
 	</body>
 </html>

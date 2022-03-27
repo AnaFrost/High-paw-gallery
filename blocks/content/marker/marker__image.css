@@ -1,3 +1,7 @@
 .marker__image {
 	width: 100%;
+	position: absolute;
+	z-index: 4;
+	width: 24px;
+	height: 24px;
 }
