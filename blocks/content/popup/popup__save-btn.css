@@ -14,3 +14,10 @@
 	background-color: #fff;
 	transition: 0.3s all ease-in;
 }
+
+@media (max-width: 600px) {
+	.popup__save-btn {
+		width: 238px;
+		height: 46px;
+	}
+}
