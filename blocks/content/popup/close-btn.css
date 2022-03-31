@@ -19,3 +19,10 @@
 	opacity: 0.6;
 	transition: 0.3s opacity ease-in;
 }
+
+@media (max-width: 600px) {
+	.close-btn {
+		top: -40px;
+		right: -8px;
+	}
+}
