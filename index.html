@@ -47,24 +47,33 @@
 					</button>
 				</section>
 				<section class="grid__container"></section>
-				<div class="popup">
-					<form class="popup__container">
-						<button class="close-btn">
+				<div class="popup" id="form-popup">
+					<form class="form">
+						<button id="close-btn-form" class="close-btn">
 							<i class="pluse-icon"></i>
 						</button>
 						<p class="popup__title"></p>
-						<input id="first_input" required class="input" type="text" />
-						<input id="second_input" required class="input" type="text" />
+						<input id="first_input" required class="form__input" type="text" />
+						<input id="second_input" required class="form__input" type="text" />
 						<button class="popup__save-btn" type="submit">Save</button>
 					</form>
+				</div>
+				<div class="popup" id="image-popup">
+					<div class="popup-with-image">
+						<img class="popup__image" />
+						<p class="image__description"></p>
+						<button id="close-btn-image" class="close-btn">
+							<i class="pluse-icon"></i>
+						</button>
+					</div>
 				</div>
 			</main>
 			<footer class="footer">
 				<p class="footer__copyright">&#169; 2022 High paw</p>
 			</footer>
 		</div>
-		<template id="grid__card">
-			<div class="grid__card">
+		<template id="card__template">
+			<div class="card">
 				<img class="card__image" alt="card image" />
 				<div class="card-marker">
 					<img class="marker__image" alt="card marker" />

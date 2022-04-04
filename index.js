@@ -1,17 +1,22 @@
 const userEditButton = document.querySelector(".user__edit-btn");
 
-const popup = document.querySelector(".popup");
+const popupWithForm = document.querySelector("#form-popup");
+const popupWithImage = document.querySelector("#image-popup");
 
-const editForm = popup.querySelector(".popup__container");
+const imagePopup = popupWithImage.querySelector(".popup__image");
+const imageText = popupWithImage.querySelector(".image__description");
 
-const closeButtonPopUp = editForm.querySelector(".close-btn");
+const editForm = popupWithForm.querySelector(".form");
+
+const closeButtonForm = editForm.querySelector("#close-btn-form");
+const closeButtonImage = popupWithImage.querySelector("#close-btn-image");
 
 const saveButtonPopUp = editForm.querySelector(".popup__save-btn");
 
 const addCardButton = document.querySelector(".profile__add-btn");
 
-const cardTemplate = document.querySelector("#grid__card").content;
-const cardElement = cardTemplate.querySelector(".grid__card");
+const cardTemplate = document.querySelector("#card__template").content;
+const cardElement = cardTemplate.querySelector(".card");
 
 const cardDeleteButton = cardElement.querySelector(".card__delete-btn");
 
@@ -39,7 +44,7 @@ const initialCards = [
 	},
 	{
 		description: "i`m Luckyy and i`m cute",
-		link: "image/lakky2.jpg",
+		link: "image/lakita1.jpg",
 		type: "cat",
 	},
 	{
@@ -58,9 +63,9 @@ const initialCards = [
 		type: "dog",
 	},
 	{
-		description: "Hanter ฅ(^◕ᴥ◕^)ฅ",
-		link: "image/lakky1.jpg",
-		type: "cat",
+		description: "Rats <3",
+		link: "image/rats2.jpg",
+		type: "other",
 	},
 ];
 
@@ -77,12 +82,19 @@ const getCardTypeLink = (type) => {
 
 const generateCard = ({ description, link, type }) => {
 	const currentCard = cardElement.cloneNode(true);
+	const cardImage = currentCard.querySelector(".card__image");
 
-	currentCard.querySelector(".card__image").src = link;
+	cardImage.src = link;
 	currentCard.querySelector(".marker__image").src = getCardTypeLink(type);
 	currentCard.querySelector(".card__title").textContent = description;
 
 	cardContainer.prepend(currentCard);
+
+	cardImage.addEventListener("click", () => {
+		imagePopup.src = link;
+		imageText.textContent = description;
+		openPopup(popupWithImage);
+	});
 
 	const cardLikeButton = currentCard.querySelector(".card__like-btn");
 	const cardLikeImage = cardLikeButton.querySelector("img");
@@ -134,19 +146,27 @@ const generetePopupForm = (typeForm) => {
 	}
 };
 
-const openPopup = () => {
-	popup.classList.add("popup_opened");
+const openPopup = (element) => {
+	element.classList.add("popup_opened");
 };
 
-const closePopup = () => {
-	popup.classList.remove("popup_opened");
-	closeButtonPopUp.disabled = true;
+const closeFormPopup = () => {
+	popupWithForm.classList.remove("popup_opened");
+	closeButtonForm.disabled = true;
 	setTimeout(() => {
 		editForm.querySelector("#first_input").value = "";
 		editForm.querySelector("#second_input").value = "";
-		closeButtonPopUp.disabled = false;
+		closeButtonForm.disabled = false;
 	}, 300);
 	editForm.removeAttribute("id");
+};
+
+const closeImagePopup = () => {
+	popupWithImage.classList.remove("popup_opened");
+	closeButtonImage.disabled = true;
+	setTimeout(() => {
+		closeButtonImage.disabled = false;
+	}, 300);
 };
 
 function submitEditForm(e) {
@@ -159,27 +179,44 @@ function submitEditForm(e) {
 	} else {
 		generateCard({ ...data, type: "other" });
 	}
-	closePopup();
+	closeFormPopup();
 }
 
 userEditButton.addEventListener("click", () => {
 	generetePopupForm(EDIT_USER);
-	openPopup();
+	openPopup(popupWithForm);
 });
 
 addCardButton.addEventListener("click", () => {
 	generetePopupForm(ADD_CARD);
-	openPopup();
+	openPopup(popupWithForm);
 });
 
-closeButtonPopUp.addEventListener("click", (e) => {
+closeButtonForm.addEventListener("click", (e) => {
 	e.preventDefault();
-	closePopup();
+	closeFormPopup();
 });
 
-popup.addEventListener("click", (e) => {
-	if (e.target === popup && popup.classList.contains("popup_opened")) {
-		closePopup();
+closeButtonImage.addEventListener("click", (e) => {
+	e.preventDefault();
+	closeImagePopup();
+});
+
+popupWithForm.addEventListener("click", (e) => {
+	if (
+		e.target === popupWithForm &&
+		popupWithForm.classList.contains("popup_opened")
+	) {
+		closeFormPopup();
+	}
+});
+
+popupWithImage.addEventListener("click", (e) => {
+	if (
+		e.target === popupWithImage &&
+		popupWithImage.classList.contains("popup_opened")
+	) {
+		closeImagePopup();
 	}
 });
 
