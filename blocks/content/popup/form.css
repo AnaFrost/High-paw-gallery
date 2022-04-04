@@ -1,8 +1,8 @@
 @import url(./popup__title.css);
-@import url(./input.css);
+@import url(./form__input.css);
 @import url(./popup__save-btn.css);
 
-.popup__container {
+.form {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -15,7 +15,7 @@
 }
 
 @media (max-width: 600px) {
-	.popup__container {
+	.form {
 		width: 282px;
 		height: 322px;
 	}
