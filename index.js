@@ -192,15 +192,9 @@ addCardButton.addEventListener("click", () => {
 	openPopup(popupWithForm);
 });
 
-closeButtonForm.addEventListener("click", (e) => {
-	e.preventDefault();
-	closeFormPopup();
-});
+closeButtonForm.addEventListener("click", closeFormPopup);
 
-closeButtonImage.addEventListener("click", (e) => {
-	e.preventDefault();
-	closeImagePopup();
-});
+closeButtonImage.addEventListener("click", closeImagePopup);
 
 popupWithForm.addEventListener("click", (e) => {
 	if (
