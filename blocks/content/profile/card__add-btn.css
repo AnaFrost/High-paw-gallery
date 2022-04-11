@@ -1,6 +1,6 @@
 @import url(./pluse-icon.css);
 
-.profile__add-btn {
+.card__add-btn {
 	cursor: pointer;
 	position: relative;
 	padding: 0;
@@ -12,21 +12,21 @@
 	transition: 0.3s opacity ease-in;
 }
 
-.profile__add-btn:hover {
+.card__add-btn:hover {
 	opacity: 0.6;
 	transition: 0.3s opacity ease-in;
 }
 
-.profile__add-btn:hover .pluse-icon::after {
+.card__add-btn:hover .pluse-icon::after {
 	transform: rotate(450deg);
 }
 
-.profile__add-btn:hover .pluse-icon::before {
+.card__add-btn:hover .pluse-icon::before {
 	transform: rotate(360deg);
 }
 
 @media (max-width: 926px) {
-	.profile__add-btn {
+	.card__add-btn {
 		width: 282px;
 	}
 }

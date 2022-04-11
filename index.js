@@ -6,24 +6,25 @@ const popupWithImage = document.querySelector("#image-popup");
 const imagePopup = popupWithImage.querySelector(".popup__image");
 const imageText = popupWithImage.querySelector(".image__description");
 
-const editForm = popupWithForm.querySelector(".form");
+const form = popupWithForm.querySelector(".form");
 
-const closeButtonForm = editForm.querySelector("#close-btn-form");
+const popupTitle = form.querySelector(".popup__title");
+const firstInput = form.querySelector("#first_input");
+const secondInput = form.querySelector("#second_input");
+
+const closeButtonForm = form.querySelector("#close-btn-form");
 const closeButtonImage = popupWithImage.querySelector("#close-btn-image");
 
-const saveButtonPopUp = editForm.querySelector(".popup__save-btn");
+const saveButtonPopUp = form.querySelector(".popup__save-btn");
 
-const addCardButton = document.querySelector(".profile__add-btn");
+const addCardButton = document.querySelector(".card__add-btn");
 
-const cardTemplate = document.querySelector("#card__template").content;
+const cardTemplate = document.querySelector("#card-template").content;
 const cardElement = cardTemplate.querySelector(".card");
-
-const cardDeleteButton = cardElement.querySelector(".card__delete-btn");
 
 const cardContainer = document.querySelector(".grid__container");
 
 let userName = document.querySelector(".user__name");
-
 let userDescription = document.querySelector(".user__bio");
 
 const LIKE_BUTTON = "image/paw_in_heart.svg";
@@ -126,20 +127,20 @@ initialCards.forEach((cardEl) => generateCard(cardEl));
 const generetePopupForm = (typeForm) => {
 	switch (typeForm) {
 		case EDIT_USER:
-			editForm.querySelector(".popup__title").textContent = "Edit profile";
-			editForm.querySelector("#first_input").placeholder = "Name";
-			editForm.querySelector("#first_input").name = "name";
-			editForm.querySelector("#second_input").placeholder = "Description";
-			editForm.querySelector("#second_input").name = "description";
-			editForm.setAttribute("id", "profile");
+			popupTitle.textContent = "Edit profile";
+			firstInput.placeholder = "Name";
+			firstInput.name = "name";
+			secondInput.placeholder = "Description";
+			secondInput.name = "description";
+			form.setAttribute("id", "profile");
 			break;
 		case ADD_CARD:
-			editForm.querySelector(".popup__title").textContent = "Add new card";
-			editForm.querySelector("#first_input").placeholder = "Description";
-			editForm.querySelector("#first_input").name = "description";
-			editForm.querySelector("#second_input").placeholder = "Photo link";
-			editForm.querySelector("#second_input").name = "link";
-			editForm.setAttribute("id", "add_card");
+			popupTitle.textContent = "Add new card";
+			firstInput.placeholder = "Description";
+			firstInput.name = "description";
+			secondInput.placeholder = "Photo link";
+			secondInput.name = "link";
+			form.setAttribute("id", "add_card");
 			break;
 		default:
 			break;
@@ -154,11 +155,11 @@ const closeFormPopup = () => {
 	popupWithForm.classList.remove("popup_opened");
 	closeButtonForm.disabled = true;
 	setTimeout(() => {
-		editForm.querySelector("#first_input").value = "";
-		editForm.querySelector("#second_input").value = "";
+		firstInput.value = "";
+		secondInput.value = "";
 		closeButtonForm.disabled = false;
 	}, 300);
-	editForm.removeAttribute("id");
+	form.removeAttribute("id");
 };
 
 const closeImagePopup = () => {
@@ -173,7 +174,7 @@ function submitEditForm(e) {
 	e.preventDefault();
 	const data = Object.fromEntries(new FormData(e.target).entries());
 
-	if (editForm.id === "profile") {
+	if (form.id === "profile") {
 		userName.textContent = data.name;
 		userDescription.textContent = data.description;
 	} else {
@@ -193,7 +194,6 @@ addCardButton.addEventListener("click", () => {
 });
 
 closeButtonForm.addEventListener("click", closeFormPopup);
-
 closeButtonImage.addEventListener("click", closeImagePopup);
 
 popupWithForm.addEventListener("click", (e) => {
@@ -214,4 +214,4 @@ popupWithImage.addEventListener("click", (e) => {
 	}
 });
 
-editForm.addEventListener("submit", submitEditForm);
+form.addEventListener("submit", submitEditForm);
