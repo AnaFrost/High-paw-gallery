@@ -155,8 +155,7 @@ const closeFormPopup = () => {
 	popupWithForm.classList.remove("popup_opened");
 	closeButtonForm.disabled = true;
 	setTimeout(() => {
-		firstInput.value = "";
-		secondInput.value = "";
+		form.reset();
 		closeButtonForm.disabled = false;
 	}, 300);
 	form.removeAttribute("id");
